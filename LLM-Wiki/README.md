@@ -5,7 +5,7 @@
 ## 当前实现说明
 
 - 本项目当前使用的是基于 `second-brain` 的定制版本（已按 openclaw 单 agent 场景调整）。
-- 初始化流程会按模板生成并覆盖工作区 `skills/agent.md`。
+- 初始化流程会按模板生成并覆盖工作区根目录 `agent.md`。
 - 多 agent 配置逻辑已裁剪为单 agent 流程。
 
 ## 重要提示

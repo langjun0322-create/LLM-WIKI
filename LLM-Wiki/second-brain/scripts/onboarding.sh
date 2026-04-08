@@ -59,15 +59,15 @@ else
   echo "wiki/log.md already exists, skipping" >&2
 fi
 
-# 4. Generate single-agent config at workspace @skills/agent.md
+# 4. Generate single-agent config at workspace root agent.md
 echo "Generating agent config..." >&2
 AGENT_TEMPLATE="$SKILL_DIR/references/agent-configs/agent.md"
 WIKI_SCHEMA_FILE="$SKILL_DIR/references/wiki-schema.md"
-AGENT_OUTPUT="$WORKSPACE_ROOT/skills/agent.md"
+AGENT_OUTPUT="$WORKSPACE_ROOT/agent.md"
 
 if [ -f "$AGENT_TEMPLATE" ] && [ -f "$WIKI_SCHEMA_FILE" ]; then
   if [ -f "$AGENT_OUTPUT" ]; then
-    echo "Overwriting existing @skills/agent.md" >&2
+    echo "Overwriting existing agent.md" >&2
   fi
   python3 - <<'PY' "$AGENT_TEMPLATE" "$WIKI_SCHEMA_FILE" "$AGENT_OUTPUT" "$VAULT_NAME" "$DOMAIN_DESCRIPTION" "$DOMAIN_TAGS_CSV"
 import sys
@@ -111,7 +111,7 @@ rendered = rendered.replace("{{WIKI_SCHEMA}}", wiki_schema)
 output_path.parent.mkdir(parents=True, exist_ok=True)
 output_path.write_text(rendered, encoding="utf-8")
 PY
-  echo "Created @skills/agent.md from template" >&2
+  echo "Created agent.md from template" >&2
 else
   echo "Template or schema missing, skipped agent config generation" >&2
 fi
@@ -169,7 +169,7 @@ cat << JSONEOF
   "files": [
     "wiki/index.md",
     "wiki/log.md",
-    "skills/agent.md (workspace root)"
+    "agent.md (workspace root)"
   ],
   "tools": $TOOLS_JSON
 }

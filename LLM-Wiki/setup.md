@@ -44,7 +44,7 @@ allowed-tools: Bash Read Write Glob Grep
 
 ### 第 4 步：Agent 配置
 
-直接在工作区 `@skills` 下生成 `agent.md`（不生成在知识库目录下）
+直接在工作区根目录下生成 `agent.md`（不生成在知识库目录下）
 
 
 ### 备注：可选 CLI 工具
@@ -82,7 +82,7 @@ bash <skill-directory>/scripts/onboarding.sh <vault-path>
 - `{{DOMAIN_TAGS}}` → 基于第 3 步生成的 5-8 个领域标签（项目符号）
 - `{{WIKI_SCHEMA}}` → 读取 `<skill-directory>/references/wiki-schema.md`，插入从 `## Architecture` 开始的全部内容
 
-将生成后的配置直接写入并覆盖工作区 `skills/agent.md`。
+将生成后的配置直接写入并覆盖工作区根目录 `agent.md`。
 
 ### 3. 更新 wiki/log.md
 
