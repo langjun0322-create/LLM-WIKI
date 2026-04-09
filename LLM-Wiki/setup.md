@@ -44,7 +44,7 @@ allowed-tools: Bash Read Write Glob Grep
 
 ### 第 4 步：Agent 配置
 
-直接在工作区根目录下生成 `agent.md`（不生成在知识库目录下）
+直接在更新目录下 `agent.md`（不生成在知识库目录下）
 
 
 ### 备注：可选 CLI 工具
